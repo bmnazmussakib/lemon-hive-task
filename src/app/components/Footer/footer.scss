@@ -1,0 +1,19 @@
+.footer {
+    background: #111D5E;
+    padding: 60px 0;
+
+    .footer-content {
+        max-width: 300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+            img{
+                max-width: 120px;
+            }
+        }
+        
+    }
+}

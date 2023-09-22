@@ -1,0 +1,42 @@
+$yellow: #FFC93E;
+$dark-blue: #111D5E;
+$light-blue: #2563EB;
+$gray: #617187;
+$light-gray: #CDCDCD;
+$white: #F9FAFB;
+
+
+.footer {
+    background: $dark-blue;
+    padding: 60px 0;
+
+    .footerContent {
+        max-width: 300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+            margin-bottom: 78px;
+            img{
+                max-width: 120px;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            gap: 1rem;
+            margin-bottom: 24px;
+        }
+
+        p{
+            margin-bottom: 0;
+            color: $white;
+            font-size: 16px;
+        }
+        
+    }
+}
