@@ -1,0 +1,49 @@
+@import '../../styles/partials/color';
+
+.accordion-tabs{
+    .tab{
+        .tab-header{
+                padding: 10px;
+                cursor: pointer;
+                background-color: #fff;
+                border: 1px solid #d9d9d977;
+                text-align: center;
+                margin-bottom: 32px;
+                width: 365px;
+                height: 72px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                font-weight: 700;
+                font-size: 20px;
+                color: $dark-blue;
+              
+                span{
+                  width: 56px;
+                  height: 56px;
+                  background: #FFFCF6;
+                  border-radius: 8px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 25px;
+                  color: $yellow;
+                  margin-right: 45px;
+                }
+        }
+        .tab-header.active {
+            background-color: $yellow;
+            color: #fff;
+            box-shadow: 0px 10px 20px 0px #A1A1A140;
+          }
+        .tab-content{}
+    }
+}
+
+@media (min-width: 767px) {
+    .accordion-tabs{
+        display: none;
+    }
+    
+}

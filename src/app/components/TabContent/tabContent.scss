@@ -1,0 +1,92 @@
+@import '../../styles/partials/color';
+
+.tab-content{
+    .card {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        .left{
+            flex-basis: 25%;
+            .img{
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .right{
+            flex-basis: 75%;
+            padding-left: 40px;
+            
+
+            .text{
+                span{
+                    display: flex;
+                    justify-content: space-between;
+                    h4.title {
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $dark-blue;
+                        margin-bottom: 20px;
+                    }
+                    .social-links{
+                        a{
+                            margin: 0 3px;
+                            color: #CDCDCD;
+                        }
+                    }
+                }
+                p.description {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $dark-blue;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .event-card {
+        background: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        .date-time {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            h4.date {
+                font-size: 20px;
+                font-weight: 700;
+                color: $dark-blue;
+            }
+            .day {
+                font-size: 16px;
+                font-weight: 400;
+                color: $dark-blue;
+            }
+        }
+        .event{
+            font-size: 16px;
+            font-weight: 400;
+            color: $dark-blue;
+            opacity: 0.8;
+            
+            .single-event {
+                margin-bottom: 10px;
+                ul{
+                    padding-left: 20px;
+                    li{
+                        list-style: disc    ;
+                    }
+                }
+            }
+
+        }
+    }
+}
