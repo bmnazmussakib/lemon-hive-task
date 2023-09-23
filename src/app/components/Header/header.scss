@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px 0;
+
   .nav-brand {
     img{
       width: 120px;
@@ -31,6 +32,16 @@
   }
 }
 
+.nav.scrolled {
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.44);
+-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.44);
+}
+
 @media screen and (max-width: 768px) {
   .nav-toggler {
     display: block;
@@ -47,11 +58,15 @@
     justify-content: start !important;
     transform: translateX(100%);
     transition: 0.5s ease-in;
+    background: #ffffff;
+    padding-top: 30px;
+    z-index: 99;
   }
 }
 /* Active Class */
 .nav-active {
   transform: translateX(0%);
+ 
 }
 
 /* Toggle Icon Animation */

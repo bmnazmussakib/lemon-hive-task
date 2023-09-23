@@ -1,10 +1,13 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.scss";
 
 function Navbar() {
   const [active, setActive] = useState("nav-menu");
   const [icon, setIcon] = useState("nav-toggler");
+  const [scrolled, setScrolled] = useState(false);
+
+  console.log(scrolled)
   
   const navToggle = () => {
     if (active === "nav-menu") {
@@ -17,8 +20,27 @@ function Navbar() {
     } else setIcon("nav-toggler");
   };
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navClass = scrolled ? 'nav scrolled' : 'nav';
+
   return (
-    <nav className="nav">
+    <nav className={navClass}>
       <a href="#" className="nav-brand">
         <img src="/img/logo.png" alt="" />
       </a>

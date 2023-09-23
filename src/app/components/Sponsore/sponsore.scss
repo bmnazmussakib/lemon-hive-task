@@ -1,0 +1,46 @@
+@import '../../styles/partials/color';
+
+.sponsor{
+    text-align: center;
+    padding-bottom: 80px;
+
+    h2.section-title{
+        margin-bottom: 30px;
+        color: $dark-blue;
+        font-size: 48px;
+    }
+    .single-sponsore{
+        text-align: center;
+
+        h6.sponsor-title{
+            margin-bottom: 30px;
+            color: $gray;
+        }
+
+        ul.sponsor-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 30px;
+
+            li{
+                a{
+                    img{
+                        width: 120px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sponsor {
+        h2.section-title{
+            font-size: 30px;
+        }
+    }
+}
