@@ -1,5 +1,8 @@
 import React from 'react'
-import styles from './footer.module.scss'
+import styles from './footer.module.scss';
+import { AiOutlineTwitter, AiFillLinkedin, AiOutlineDribbble } from 'react-icons/ai';
+import { BsFacebook } from 'react-icons/bs';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -7,29 +10,31 @@ export default function Footer() {
       <div className="container">
         <div className={styles.footerContent}>
           <div className={styles.logo}>
+            <Link href="/">
             <img src="/img/logo-white.png" alt="" />
+            </Link>
           </div>
 
           <ul>
             <li>
-              <a href="">
-                <img src="/img/twitter.png" alt="" />
-              </a>
+              <Link href="">
+                <AiOutlineTwitter />
+              </Link>
             </li>
             <li>
-              <a href="">
-                <img src="/img/twitter.png" alt="" />
-              </a>
+              <Link href="">
+                <AiFillLinkedin />
+              </Link>
             </li>
             <li>
-              <a href="">
-                <img src="/img/twitter.png" alt="" />
-              </a>
+              <Link href="">
+                <BsFacebook />
+              </Link>
             </li>
             <li>
-              <a href="">
-                <img src="/img/twitter.png" alt="" />
-              </a>
+              <Link href="">
+                <AiOutlineDribbble />
+              </Link>
             </li>
           </ul>
 

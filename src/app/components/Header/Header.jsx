@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import "./header.scss";
+import Link from "next/link";
 
 function Navbar() {
   const [active, setActive] = useState("nav-menu");
@@ -41,9 +42,9 @@ function Navbar() {
 
   return (
     <nav className={navClass}>
-      <a href="#" className="nav-brand">
+      <Link href="/" className="nav-brand">
         <img src="/img/logo.png" alt="" />
-      </a>
+      </Link>
       <ul className={active}>
         <li className="nav-item">
           <a href="#" className="nav__link">
