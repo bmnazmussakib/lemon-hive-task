@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./tabs.scss";
 import { RiArrowUpDownLine } from "react-icons/ri";
 import TabContent from "../TabContent/TabContent";
@@ -13,6 +13,7 @@ function VerticalTabs() {
 
   const tabs = [
     {
+      id: 0,
       title: "Organizer",
       content: [
         {
@@ -35,6 +36,7 @@ function VerticalTabs() {
       ],
     },
     {
+    id: 1,
       title: "Speakers",
       content: [
         {
@@ -75,6 +77,7 @@ function VerticalTabs() {
       ],
     },
     {
+    id: 2,
       title: "Schedule",
       content: [
         {
@@ -116,6 +119,7 @@ function VerticalTabs() {
       ],
     },
     {
+    id: 3,
       title: "Sponsors",
       content: [
         {
@@ -139,14 +143,59 @@ function VerticalTabs() {
     },
   ];
 
+  const [tabTitle, setTabTitle] = useState(tabs)
+
+
+  const dragItem = useRef(null)
+  const dragOverItem = useRef(null)
+
+
+  // Handle Drag Start
+  const handleDragStart = (e, index) => {
+    console.log("Drag Start", index)
+  }
+
+  // Handle Drag Enter
+  const handleDragEnter = (e, index) => {
+    e.preventDefault();
+    console.log("Drag Enter", index)
+  }
+
+  // Handle Drag End
+  const handleDragEnd = (e) => {
+    console.log("Drag End")
+  }
+
+  // Handle Drag Sorting
+  const handleSorting = () => {
+    // Duplicate Items
+    let tabItem = [...tabTitle]
+
+    // Remove and Save Dragged Item
+    const draggedItemContent = tabItem.splice(dragItem.current, 1)[0]
+
+    // Switching the position
+    tabItem.splice(dragOverItem.current, 0, draggedItemContent)
+
+    // Reset the position Ref
+    dragItem.current = null
+    dragOverItem.current = null
+
+    setTabTitle(tabItem)
+  }
+ 
   return (
     <div className="vertical-tabs">
       <div className="tabs">
-        {tabs.map((tab, index) => (
+        {tabTitle.map((tab, index) => (
           <div
             key={index}
-            className={`tab ${index === activeTab ? "active" : ""}`}
-            onClick={() => handleTabClick(index)}
+            className={`tab ${tab.id === activeTab ? "active" : ""}`}
+            onClick={() => handleTabClick(tab.id)}
+            draggable
+            onDragStart={(e)=>(dragItem.current = index)}
+            onDragEnter={(e)=>(dragOverItem.current = index)}
+            onDragEnd={handleSorting}
           >
             <span>
               <RiArrowUpDownLine />
